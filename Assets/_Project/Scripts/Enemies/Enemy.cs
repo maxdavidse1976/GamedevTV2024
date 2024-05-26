@@ -28,6 +28,11 @@ public class Enemy : Health
             healthBar.maxValue = maxHealth;
             healthBar.value = maxHealth;
         }
+
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.RegisterEnemy(this);
+        }
     }
 
     protected override void LateUpdate()
@@ -35,5 +40,21 @@ public class Enemy : Health
         base.LateUpdate();
 
         if (healthBar) healthBar.value = currentHealth;
+    }
+
+    private void OnDisable()
+    {
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.UnregisterEnemy(this);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.UnregisterEnemy(this);
+        }
     }
 }

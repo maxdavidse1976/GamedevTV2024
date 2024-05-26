@@ -33,7 +33,7 @@ public class Enemy_AIMovement : MonoBehaviour
         else
         {
             // Stop the agent from moving if the player is out of range
-            navAgent.ResetPath();
+            navAgent.SetDestination(Vector3.zero);
         }
     }
 }
