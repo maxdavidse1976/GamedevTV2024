@@ -17,9 +17,6 @@ public class Player : Health
     public float fireRate = 0.5f;
     public float projectileSpeed = 20f;
     public float bulletLife = 0.5f;
-
-    [Header("UI Settings")]
-    [SerializeField] Slider healthBar;
     public Image crosshair;
 
     private void Awake()
@@ -27,22 +24,8 @@ public class Player : Health
         Instance = this;
     }
 
-    protected override void OnEnable()
+    private void Update()
     {
-        base.OnEnable();
-
-        if (healthBar)
-        {
-            healthBar.minValue = 0;
-            healthBar.maxValue = maxHealth;
-            healthBar.value = maxHealth;
-        }
-    }
-
-    protected override void LateUpdate()
-    {
-        base.LateUpdate();
-
         if(healthBar) healthBar.value = currentHealth;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Health : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public abstract class Health : MonoBehaviour
 
 	[SerializeField] protected int regenerateAmount;
 	[SerializeField] protected float regenerateRate;
+
+	[SerializeField] protected Slider healthBar;
 
 	private float currentRegenTime;
 	//private float damageOverTime;
@@ -41,6 +44,8 @@ public abstract class Health : MonoBehaviour
 
 	protected virtual void Die()
 	{
+		healthBar.value = 0;
+
 		if (dontDestroy)
 		{
 			gameObject.SetActive(false);
@@ -71,6 +76,13 @@ public abstract class Health : MonoBehaviour
 	protected virtual void OnEnable()
 	{
 		ResetHealth();
+
+		if (healthBar)
+		{
+			healthBar.minValue = 0;
+			healthBar.maxValue = maxHealth;
+			healthBar.value = maxHealth;
+		}
 	}
 
     protected virtual void LateUpdate()

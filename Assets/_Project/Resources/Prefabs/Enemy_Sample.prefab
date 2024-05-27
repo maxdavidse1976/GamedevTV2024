@@ -430,6 +430,7 @@ GameObject:
   - component: {fileID: 432718177360598290}
   - component: {fileID: 2689837234020891095}
   - component: {fileID: 3645005437308394414}
+  - component: {fileID: -8964565209053121577}
   m_Layer: 0
   m_Name: Enemy_Sample
   m_TagString: Untagged
@@ -446,7 +447,7 @@ Transform:
   m_GameObject: {fileID: 6210604548699258967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -494,7 +495,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 0.5
+  m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2689837234020891095
@@ -515,13 +516,17 @@ MonoBehaviour:
   currentHealth: 0
   regenerateAmount: 2
   regenerateRate: 0.5
-  stoppingDistance: 2.5
-  moveSpeed: 4
-  chaseRange: 10
-  attackRate: 0
-  damage: 0
-  damageDistance: 0
   healthBar: {fileID: 7304955303635483278}
+  stoppingDistance: 2
+  moveSpeed: 4
+  chaseRange: 5
+  damageableLayers:
+    serializedVersion: 2
+    m_Bits: 192
+  attackRange: 1.5
+  attackRate: 1
+  damage: 10
+  currentTarget: {x: 0, y: 0, z: 0}
 --- !u!114 &3645005437308394414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +537,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434a67a4f08ed415b8133c7dddfd80bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8964565209053121577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6210604548699258967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c237dbc53f0c4eaf910943505957577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7053087491299748554

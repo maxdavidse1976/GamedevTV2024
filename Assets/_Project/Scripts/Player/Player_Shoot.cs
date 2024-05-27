@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_Shoot : MonoBehaviour
 {
-    private float nextFireTime = 0f;
+    float nextFireTime = 0f;
 
     void Update()
     {

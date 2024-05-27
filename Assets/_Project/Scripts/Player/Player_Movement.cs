@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
+    bool useRB;
+
     Rigidbody rb;
+    CharacterController charController;
     Vector3 movementInput;
+
+    float fakeGravity = -10f;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        if (useRB)
+        {
+            rb = GetComponent<Rigidbody>();
 
-        rb.useGravity = false;
-        rb.isKinematic = false;
+            rb.useGravity = false;
+            rb.isKinematic = false;
+        }
+        else
+        {
+            charController = GetComponent<CharacterController>();
+        }
     }
 
     void Update()
@@ -19,18 +32,25 @@ public class Player_Movement : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
-        movementInput = new Vector3(moveX, 0f, moveZ).normalized;
+        movementInput = new Vector3(moveX, 0f, moveZ).normalized * Player.Instance.moveSpeed;
     }
 
     void FixedUpdate()
     {
-        MovePlayer();
+        if(useRB) MoveRBPlayer();
+        else charController.Move(movementInput * Time.fixedDeltaTime);
     }
 
-    void MovePlayer()
+    void MoveRBPlayer()
     {
-        Vector3 newPosition = rb.position + movementInput * Player.Instance.moveSpeed * Time.fixedDeltaTime;
+        Vector3 newPosition = rb.position + movementInput * Time.fixedDeltaTime;
 
         rb.MovePosition(newPosition);
+        ApplyFakeGravity();
+    }
+
+    void ApplyFakeGravity()
+    {
+        rb.velocity = new Vector3(rb.velocity.x, fakeGravity, rb.velocity.z);
     }
 }

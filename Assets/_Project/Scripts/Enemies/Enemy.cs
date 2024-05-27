@@ -11,23 +11,17 @@ public class Enemy : Health
     public float chaseRange = 7f; // Range within which the enemy will start chasing the player
 
     [Header("Damage Settings")]
+    public LayerMask damageableLayers;
+    public float attackRange;
     public float attackRate;
-    public float damage;
-    public float damageDistance;
+    public int damage;
 
-    [Header("UI Settings")]
-    [SerializeField] Slider healthBar;
+    [Header("Other References")]
+    public Vector3 currentTarget;
 
     protected override void OnEnable()
     {
         base.OnEnable();
-
-        if (healthBar)
-        {
-            healthBar.minValue = 0;
-            healthBar.maxValue = maxHealth;
-            healthBar.value = maxHealth;
-        }
 
         if (EnemyManager.Instance != null)
         {
@@ -35,10 +29,8 @@ public class Enemy : Health
         }
     }
 
-    protected override void LateUpdate()
+    void Update()
     {
-        base.LateUpdate();
-
         if (healthBar) healthBar.value = currentHealth;
     }
 
