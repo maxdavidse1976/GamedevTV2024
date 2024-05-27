@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowUpgradeScreen()
     {
+        
         _upgradeCanvas.gameObject.SetActive(true);
     }
 }
