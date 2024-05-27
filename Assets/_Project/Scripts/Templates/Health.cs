@@ -87,7 +87,9 @@ public abstract class Health : MonoBehaviour
 
     protected virtual void LateUpdate()
     {
-        if(regenerateRate > 0 && regenerateAmount > 0 && currentHealth < maxHealth)
+		if (healthBar) healthBar.value = currentHealth;
+
+		if (regenerateRate > 0 && regenerateAmount > 0 && currentHealth < maxHealth)
         {
 			RegenerateOverTime();
 		}

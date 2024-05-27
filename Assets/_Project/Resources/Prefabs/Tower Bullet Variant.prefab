@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6509884912505053107
+--- !u!1001 &2401323351214729677
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,12 +11,22 @@ PrefabInstance:
     - target: {fileID: 1092170749335295206, guid: ae66a50275e1d47f7b9b9b0bbcfe4437,
         type: 3}
       propertyPath: m_Name
-      value: Player Bullet Variant
+      value: Tower Bullet Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1092170749335295206, guid: ae66a50275e1d47f7b9b9b0bbcfe4437,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097620431569705122, guid: ae66a50275e1d47f7b9b9b0bbcfe4437,
+        type: 3}
+      propertyPath: LifeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2440347494196114138, guid: ae66a50275e1d47f7b9b9b0bbcfe4437,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4172200574882375870, guid: ae66a50275e1d47f7b9b9b0bbcfe4437,
         type: 3}
@@ -68,6 +78,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9027771129544831911, guid: ae66a50275e1d47f7b9b9b0bbcfe4437,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -75,23 +90,23 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1092170749335295206, guid: ae66a50275e1d47f7b9b9b0bbcfe4437,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -2751747924841946899}
+      addedObject: {fileID: -7306318210315837628}
   m_SourcePrefab: {fileID: 100100000, guid: ae66a50275e1d47f7b9b9b0bbcfe4437, type: 3}
---- !u!1 &6160900465098361685 stripped
+--- !u!1 &3349303045769067819 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1092170749335295206, guid: ae66a50275e1d47f7b9b9b0bbcfe4437,
     type: 3}
-  m_PrefabInstance: {fileID: 6509884912505053107}
+  m_PrefabInstance: {fileID: 2401323351214729677}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-2751747924841946899
+--- !u!114 &-7306318210315837628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6160900465098361685}
+  m_GameObject: {fileID: 3349303045769067819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b472e5339e2040fb8d90fb79a120170, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cd15e59347f840c6b58e24d71bb31bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

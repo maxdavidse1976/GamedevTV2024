@@ -23,9 +23,4 @@ public class Player : Health
     {
         Instance = this;
     }
-
-    private void Update()
-    {
-        if(healthBar) healthBar.value = currentHealth;
-    }
 }

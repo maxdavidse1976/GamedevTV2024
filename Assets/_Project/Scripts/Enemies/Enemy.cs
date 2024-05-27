@@ -29,11 +29,6 @@ public class Enemy : Health
         }
     }
 
-    void Update()
-    {
-        if (healthBar) healthBar.value = currentHealth;
-    }
-
     private void OnDisable()
     {
         if (EnemyManager.Instance != null)
