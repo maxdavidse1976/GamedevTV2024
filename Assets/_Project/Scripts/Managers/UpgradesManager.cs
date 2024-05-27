@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradesManager : MonoBehaviour
 {
     public enum UpgradeTarget { Player, Tower }
-    public enum UpgradeType { PlayerStats, TowerrStats, PowerUpgrade }
+    public enum UpgradeType { Stats, PowerUpgrade }
     public enum UpgradeStats
     {
         MaxHealth,
@@ -15,7 +16,7 @@ public class UpgradesManager : MonoBehaviour
         BulletLife,
         Penetration
     }
-    public enum UpgradePowers { FireBall, IceBall, ThunderBall }
+    public enum UpgradePowers { None, FireBall, IceBall, ThunderBall }
 
     public List<Upgrade> availableUpgrades; // List of all possible upgrades
 
@@ -27,6 +28,8 @@ public class UpgradesManager : MonoBehaviour
     {
         // Initialize upgrade lists
         InitializeUpgradeLists();
+
+        ProvideRandomUpgrades();
     }
 
     void InitializeUpgradeLists()
@@ -70,6 +73,6 @@ public class UpgradesManager : MonoBehaviour
         }
 
         // Implement the logic to apply the upgrade to the player or tower
-        Debug.Log($"Provided {upgrade.target} with {upgrade.upgradeName}: {upgrade.description} (Value: {upgrade.value})");
+        Debug.Log($"Provided {upgrade.target} with {upgrade.upgradeName}: (Value: {upgrade.value})");
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "NewUpgrade", menuName = "Upgrades/Upgrade")]
 public class Upgrade : ScriptableObject
@@ -8,6 +9,7 @@ public class Upgrade : ScriptableObject
     public UpgradesManager.UpgradeStats stat;
     public UpgradesManager.UpgradePowers power;
     public string upgradeName;
-    public string description;
+    //public string description;
     public float value; // Value of the stat increase or power effect
+    public Image icon;
 }
