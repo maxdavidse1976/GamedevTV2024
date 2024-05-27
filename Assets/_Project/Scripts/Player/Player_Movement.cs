@@ -32,25 +32,42 @@ public class Player_Movement : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
-        movementInput = new Vector3(moveX, 0f, moveZ).normalized * Player.Instance.moveSpeed;
+        movementInput = new Vector3(moveX, 0f, moveZ).normalized;
+
+        ApplyFakeGravity();
     }
 
     void FixedUpdate()
     {
-        if(useRB) MoveRBPlayer();
-        else charController.Move(movementInput * Time.fixedDeltaTime);
+        if (useRB)
+        {
+            MoveRBPlayer();
+        }
+        else
+        {
+            MoveCCPlayer();
+        }
+    }
+
+    void MoveCCPlayer()
+    {
+        charController.Move(movementInput * Player.Instance.moveSpeed * Time.fixedDeltaTime);
     }
 
     void MoveRBPlayer()
     {
-        Vector3 newPosition = rb.position + movementInput * Time.fixedDeltaTime;
+        Vector3 newPosition = rb.position + movementInput * Player.Instance.moveSpeed * Time.fixedDeltaTime;
 
         rb.MovePosition(newPosition);
-        ApplyFakeGravity();
     }
 
     void ApplyFakeGravity()
     {
+        if(rb)
         rb.velocity = new Vector3(rb.velocity.x, fakeGravity, rb.velocity.z);
+        if (charController)
+        {
+            movementInput.y = fakeGravity * Time.deltaTime;
+        }
     }
 }
