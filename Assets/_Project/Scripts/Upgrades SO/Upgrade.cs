@@ -11,5 +11,5 @@ public class Upgrade : ScriptableObject
     public string upgradeName;
     //public string description;
     public float value; // Value of the stat increase or power effect
-    public Image icon;
+    public Sprite icon;
 }

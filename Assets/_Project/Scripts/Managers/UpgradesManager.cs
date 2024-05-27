@@ -72,6 +72,7 @@ public class UpgradesManager : MonoBehaviour
             return;
         }
 
+        UIManager.Instance.ShowUpgrade(upgrade);
         // Implement the logic to apply the upgrade to the player or tower
         Debug.Log($"Provided {upgrade.target} with {upgrade.upgradeName}: (Value: {upgrade.value})");
     }
