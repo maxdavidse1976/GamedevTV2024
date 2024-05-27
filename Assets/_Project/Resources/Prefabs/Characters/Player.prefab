@@ -500,6 +500,7 @@ MonoBehaviour:
   currentHealth: 0
   regenerateAmount: 1
   regenerateRate: 0.5
+  healthBar: {fileID: 8192911285926402821}
   moveSpeed: 5
   bulletPrefab: {fileID: 6160900465098361685, guid: eaac186134b1d430b9082495ad056a62,
     type: 3}
@@ -508,7 +509,6 @@ MonoBehaviour:
   fireRate: 0.5
   projectileSpeed: 20
   bulletLife: 0.5
-  healthBar: {fileID: 8192911285926402821}
   crosshair: {fileID: 2723623730226597616}
 --- !u!114 &4284709597271155141
 MonoBehaviour:

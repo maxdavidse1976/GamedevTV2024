@@ -382,7 +382,7 @@ Transform:
   m_GameObject: {fileID: 6057564773067357945}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.85, z: 0}
+  m_LocalPosition: {x: 0, y: 3.843, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -463,17 +463,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 0
   dontDestroy: 0
-  maxHealth: 5000
+  maxHealth: 200
   currentHealth: 0
-  regenerateAmount: 0
-  regenerateRate: 0
+  regenerateAmount: 1
+  regenerateRate: 2
   healthBar: {fileID: 6846167052798310992}
-  _damage: 50
-  _fireRate: 0.5
+  _damage: 80
+  _fireRate: 1
   _bulletPrefab: {fileID: 3349303045769067819, guid: 177a6a6573f1243f98d5ad5b03c66b5b,
     type: 3}
   _firePoint: {fileID: 7070901256795414587}
-  _projectileSpeed: 5
+  _projectileSpeed: 20
   _bulletLife: 0.5
   _attackRadius: 20
 --- !u!114 &4334000265227452267
