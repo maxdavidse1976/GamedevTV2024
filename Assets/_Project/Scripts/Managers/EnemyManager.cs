@@ -45,8 +45,9 @@ public class EnemyManager : MonoBehaviour
 
             yield return new WaitForSeconds(waveInterval);
 
-            // Increase the wave number
+            // Increase the wave number and show upgrade screen
             waveNumber++;
+            UIManager.Instance.ShowUpgradeScreen();
         }
     }
 
