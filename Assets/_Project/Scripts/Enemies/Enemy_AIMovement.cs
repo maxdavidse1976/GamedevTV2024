@@ -24,11 +24,15 @@ public class Enemy_AIMovement : MonoBehaviour
         
         navAgent.speed = enemyCS.moveSpeed;
         navAgent.stoppingDistance = enemyCS.stoppingDistance;
+
+        enemyCS.canMove = true;
     }
 
     void Update()
     {
-        if (!player) return;
+        if (enemyCS.IsDead()) navAgent.isStopped = true;
+
+        if (!player || !enemyCS.canMove || enemyCS.IsDead()) return;
 
         distanceToPlayer = Vector3.Distance(Player.Instance.transform.position, transform.position);
         distanceToTower = Vector3.Distance(Vector3.zero, transform.position);
@@ -43,6 +47,8 @@ public class Enemy_AIMovement : MonoBehaviour
             enemyCS.currentTarget = Vector3.zero;
             MoveAI(Vector3.zero);
         }
+
+        enemyCS.animator.PlayMovementAnimations(enemyCS.canMove);
     }
 
     void MoveAI(Vector3 _target)
