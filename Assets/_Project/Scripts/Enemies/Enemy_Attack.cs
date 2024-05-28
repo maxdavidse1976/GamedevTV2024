@@ -46,7 +46,6 @@ public class Enemy_Attack : MonoBehaviour
             if(hit.collider.TryGetComponent(out Health health))
             {
                 health.TakeDamage(enemyCS.damage);
-                Debug.Log("//Attack!");
             }
         }
     }

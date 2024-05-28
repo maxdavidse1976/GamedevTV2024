@@ -8,6 +8,7 @@ public abstract class Health : MonoBehaviour
 	[Header("Health Settings")]
 	[SerializeField] protected bool isPlayer;
 	[SerializeField] protected bool dontDestroy;
+	[SerializeField] protected bool dontRemoveDeadBody;
 
 	[SerializeField] protected int maxHealth;
 	[SerializeField] protected int currentHealth;
@@ -23,6 +24,7 @@ public abstract class Health : MonoBehaviour
 	public virtual bool IsPlayer() { return isPlayer; }
 	public virtual int GetMaxHealthValue() { return maxHealth; }
 	public virtual int GetCurrentHealthValue() { return currentHealth; }
+	public virtual bool IsDead() { return currentHealth <= 0; }
 
 	public virtual void Heal(int _value)
 	{
@@ -46,13 +48,16 @@ public abstract class Health : MonoBehaviour
 	{
 		healthBar.value = 0;
 
-		if (dontDestroy)
+		if (!dontRemoveDeadBody)
 		{
-			gameObject.SetActive(false);
-		}
-		else
-		{
-			Destroy(gameObject);
+			if (dontDestroy)
+			{
+				gameObject.SetActive(false);
+			}
+			else
+			{
+				Destroy(gameObject);
+			}
 		}
 	}
 

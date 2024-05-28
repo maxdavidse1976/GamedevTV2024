@@ -4502,7 +4502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &735639071
 Transform:
   m_ObjectHideFlags: 0
@@ -11120,6 +11120,21 @@ PrefabInstance:
       propertyPath: m_Targets.Array.data[1].target
       value: 
       objectReference: {fileID: 627778472}
+    - target: {fileID: 4680153543060356955, guid: a4f474665e3a44b3b9c7b3604d07ef52,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680153543060356955, guid: a4f474665e3a44b3b9c7b3604d07ef52,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8555952
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680153543060356955, guid: a4f474665e3a44b3b9c7b3604d07ef52,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.51764566
+      objectReference: {fileID: 0}
     - target: {fileID: 4709078176027447472, guid: a4f474665e3a44b3b9c7b3604d07ef52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11170,11 +11185,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5828858745063727845, guid: a4f474665e3a44b3b9c7b3604d07ef52,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828858745063727845, guid: a4f474665e3a44b3b9c7b3604d07ef52,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8555952
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828858745063727845, guid: a4f474665e3a44b3b9c7b3604d07ef52,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.51764566
+      objectReference: {fileID: 0}
     - target: {fileID: 7129597887372357124, guid: a4f474665e3a44b3b9c7b3604d07ef52,
         type: 3}
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 439686393}
+    - target: {fileID: 8500733865426567900, guid: a4f474665e3a44b3b9c7b3604d07ef52,
+        type: 3}
+      propertyPath: ShoulderOffset.y
+      value: 19.09
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

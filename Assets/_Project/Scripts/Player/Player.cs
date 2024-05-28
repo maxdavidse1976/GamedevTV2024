@@ -23,4 +23,10 @@ public class Player : Health
     {
         Instance = this;
     }
+
+    protected override void Die()
+    {
+        Player_Animator.Instance.PlayDeathAnimation();
+        base.Die();
+    }
 }

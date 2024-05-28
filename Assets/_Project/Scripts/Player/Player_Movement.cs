@@ -29,16 +29,20 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
+        if (Player.Instance.IsDead()) return;
+
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
         movementInput = new Vector3(moveX, 0f, moveZ).normalized;
-
         ApplyFakeGravity();
+        Player_Animator.Instance.PlayMovementAnimations(new Vector2(moveX,moveZ));
     }
 
     void FixedUpdate()
     {
+        if (Player.Instance.IsDead()) return;
+
         if (useRB)
         {
             MoveRBPlayer();

@@ -6,11 +6,18 @@ public class Player_Look : MonoBehaviour
 {
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
     }
 
     private void Update()
     {
+        if (Player.Instance.IsDead())
+        {
+            Cursor.visible = true;
+            return;
+        }
+
         RotateTowardsMouse();
         MoveCursor();
     }
