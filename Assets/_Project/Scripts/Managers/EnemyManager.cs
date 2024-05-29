@@ -66,8 +66,8 @@ public class EnemyManager : MonoBehaviour
         while (countdown > 0)
         {
             countdownText.text = "Next Wave in: " + countdown.ToString();
-            yield return new WaitForSeconds(1f);
-            countdown = 1f;
+            countdown--;
+            yield return new WaitForSeconds(countdown);
         }
         countdownText.text = "";
 
@@ -138,7 +138,8 @@ public class EnemyManager : MonoBehaviour
 
     void EndWave()
     {
-        Debug.Log("Wave " + waveNumber.ToString() + " has ended");
+        UpgradesManager upgradesManager = FindObjectOfType<UpgradesManager>();
+        upgradesManager.ProvideRandomUpgrades();
         StartWave();
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,12 +25,14 @@ public class UpgradesManager : MonoBehaviour
     private List<Upgrade> towerUpgrades;
     private List<Upgrade> bulletUpgrades;
 
+    private List<Upgrade> selectedUpgrades;
+
     void Start()
     {
         // Initialize upgrade lists
         InitializeUpgradeLists();
 
-        ProvideRandomUpgrades();
+        //ProvideRandomUpgrades();
     }
 
     void InitializeUpgradeLists()
@@ -43,9 +46,9 @@ public class UpgradesManager : MonoBehaviour
     public void ProvideRandomUpgrades()
     {
         // Select one random upgrade for each category
-        Upgrade playerUpgrade = GetRandomUpgrade(playerUpgrades);
-        Upgrade towerUpgrade = GetRandomUpgrade(towerUpgrades);
-        Upgrade bulletUpgrade = GetRandomUpgrade(bulletUpgrades);
+        Upgrade playerUpgrade = GetRandomUpgrade(playerUpgrades.Where(u => !selectedUpgrades.Any(su => su.upgradeName == u.upgradeName)).ToList());
+        Upgrade towerUpgrade = GetRandomUpgrade(towerUpgrades.Where(u => !selectedUpgrades.Any(su => su.upgradeName == u.upgradeName)).ToList());
+        Upgrade bulletUpgrade = GetRandomUpgrade(bulletUpgrades.Where(u => !selectedUpgrades.Any(su => su.upgradeName == u.upgradeName)).ToList());
 
         // Provide the selected upgrades
         ProvideUpgrade(playerUpgrade);
@@ -61,6 +64,7 @@ public class UpgradesManager : MonoBehaviour
         }
 
         int randomIndex = Random.Range(0, upgrades.Count);
+        selectedUpgrades.Add(upgrades[randomIndex]);
         return upgrades[randomIndex];
     }
 
@@ -72,6 +76,8 @@ public class UpgradesManager : MonoBehaviour
             return;
         }
 
+        if (!UIManager.Instance.IsUpgradeScreenActive()) UIManager.Instance.ShowUpgradeScreen();
+        
         UIManager.Instance.ShowUpgrade(upgrade);
         // Implement the logic to apply the upgrade to the player or tower
         Debug.Log($"Provided {upgrade.target} with {upgrade.upgradeName}: (Value: {upgrade.value})");
