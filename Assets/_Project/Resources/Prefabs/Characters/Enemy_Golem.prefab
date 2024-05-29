@@ -535,7 +535,7 @@ MonoBehaviour:
   attackRate: 1
   damage: 10
   currentTarget: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
+  animator: {fileID: -2190319604516735383}
 --- !u!114 &3645005437308394414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b50066557fff41ff8ac09e313b426f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 364701952464390967}
 --- !u!1 &7053087491299748554
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +717,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95380085654935804, guid: 6bbfea6690ef7724ba495c866081f855,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 30c20d14ed22a4ebe866e5ab1300f145, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -725,6 +730,12 @@ PrefabInstance:
 --- !u!4 &311553776179774973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4408297863206454, guid: 6bbfea6690ef7724ba495c866081f855,
+    type: 3}
+  m_PrefabInstance: {fileID: 314537089118229451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &364701952464390967 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95380085654935804, guid: 6bbfea6690ef7724ba495c866081f855,
     type: 3}
   m_PrefabInstance: {fileID: 314537089118229451}
   m_PrefabAsset: {fileID: 0}

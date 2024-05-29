@@ -45,9 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_destroyOnLoad: 0
-  enemyPrefab: {fileID: 6210604548699258967, guid: 618e3be01cd824f9dba1cfe62fef55b1,
-    type: 3}
+  countdownText: {fileID: 0}
+  enemyPrefabs:
+  - {fileID: 6210604548699258967, guid: 618e3be01cd824f9dba1cfe62fef55b1, type: 3}
+  - {fileID: 6210604548699258967, guid: d58a41bb4249b63448be71065dbf9d56, type: 3}
+  - {fileID: 6210604548699258967, guid: b5d5391bcf740db4eb5ff5c126697e56, type: 3}
+  - {fileID: 6210604548699258967, guid: 1637ce2c750641044b558156d43086b6, type: 3}
+  spawnRatios: 05000000030000000200000001000000
   spawnRadius: 50
   safeZoneRadius: 45
-  initialEnemies: 5
-  waveInterval: 10
+  initialEnemies: 3
+  waveCountdown: 5
