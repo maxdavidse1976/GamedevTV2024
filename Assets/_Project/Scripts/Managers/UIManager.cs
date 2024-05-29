@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
+    [Header("Singleton")]
+    [SerializeField] bool m_destroyOnLoad = false;
+
     [SerializeField] Canvas _upgradeCanvas;
     [SerializeField] TMP_Text _playerUpgradeName;
     [SerializeField] Sprite _playerUpgradeIcon;
@@ -14,12 +17,25 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text _powerUpgradeName;
     [SerializeField] Sprite _powerUpgradeIcon;
 
+    [Space(5)]
+    [Header("UI Screens")]
+    [SerializeField] GameObject TitleScreen;
+    [SerializeField] GameObject GameScreen;
+    [SerializeField] GameObject EndScreen;
+
+
 
     public bool IsUpgradeScreenActive() => _upgradeCanvas.gameObject.activeSelf;
     
     void Awake()
     {
-        Instance = this;
+        if (Instance == null) Instance = this;
+        else if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (m_destroyOnLoad) { DontDestroyOnLoad(this.gameObject); }
     }
 
     public void ShowUpgradeScreen()
@@ -71,6 +87,26 @@ public class UIManager : MonoBehaviour
 
     public void ContinueGamePlay()
     {
-        
+
+    }
+    public void ShowTitleScreen()
+    {
+        TitleScreen.SetActive(true);
+        GameScreen.SetActive(false);
+        EndScreen.SetActive(false);
+    }
+
+    public void ShowGameScreen()
+    {
+        TitleScreen.SetActive(false);
+        GameScreen.SetActive(true);
+        EndScreen.SetActive(false);
+    }
+
+    public void ShowEndScreen()
+    {
+        TitleScreen.SetActive(false);
+        GameScreen.SetActive(false);
+        EndScreen.SetActive(true);
     }
 }

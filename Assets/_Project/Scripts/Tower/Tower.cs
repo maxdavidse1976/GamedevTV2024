@@ -19,4 +19,11 @@ public class Tower : Health
     {
         Instance = this;
     }
+
+    protected override void Die()
+    {
+        Player_Animator.Instance.PlayDeathAnimation();
+        base.Die();
+        GameManager.Instance.EndGame();
+    }
 }

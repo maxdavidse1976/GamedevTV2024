@@ -28,5 +28,6 @@ public class Player : Health
     {
         Player_Animator.Instance.PlayDeathAnimation();
         base.Die();
+        GameManager.Instance.EndGame();
     }
 }

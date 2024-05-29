@@ -45,7 +45,7 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
-        StartWave();
+        //StartWave();
     }
 
     public void StartWave()
@@ -66,8 +66,9 @@ public class EnemyManager : MonoBehaviour
         while (countdown > 0)
         {
             countdownText.text = "Next Wave in: " + countdown.ToString();
-            countdown--;
-            yield return new WaitForSeconds(countdown);
+
+            yield return new WaitForSeconds(1f);
+            countdown -= 1f;
         }
         countdownText.text = "";
 
@@ -140,7 +141,7 @@ public class EnemyManager : MonoBehaviour
     {
         UpgradesManager upgradesManager = FindObjectOfType<UpgradesManager>();
         upgradesManager.ProvideRandomUpgrades();
-        StartWave();
+        //StartWave();
     }
 
     public void RegisterEnemy(Enemy enemy)

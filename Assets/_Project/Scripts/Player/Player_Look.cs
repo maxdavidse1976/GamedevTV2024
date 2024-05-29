@@ -6,12 +6,21 @@ public class Player_Look : MonoBehaviour
 {
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
+        
     }
 
     private void Update()
     {
+        if (!GameManager.Instance.gameStarted)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.visible = false;
+        }
+
         if (Player.Instance.IsDead())
         {
             Cursor.visible = true;
