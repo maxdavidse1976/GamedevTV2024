@@ -16,7 +16,7 @@ public class Player : Health
     public int damage = 50;
     public float fireRate = 0.5f;
     public float projectileSpeed = 20f;
-    public float bulletLife = 0.5f;
+    public float bulletRange = 5f;
     public Image crosshair;
 
     private void Awake()

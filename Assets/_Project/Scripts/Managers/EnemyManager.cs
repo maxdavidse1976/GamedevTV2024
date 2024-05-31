@@ -139,8 +139,8 @@ public class EnemyManager : MonoBehaviour
 
     void EndWave()
     {
-        UpgradesManager upgradesManager = FindObjectOfType<UpgradesManager>();
-        upgradesManager.ProvideRandomUpgrades();
+        //UpgradesManager upgradesManager = FindObjectOfType<UpgradesManager>();
+        //upgradesManager.ProvideRandomUpgrades();
         //StartWave();
     }
 

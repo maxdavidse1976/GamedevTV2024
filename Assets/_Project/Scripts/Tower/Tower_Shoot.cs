@@ -37,6 +37,7 @@ public class Tower_Shoot : MonoBehaviour
     void Shoot(GameObject _bulletPrefab, Transform _firepoint, float _projectileSpeed)
     {
         GameObject projectile = Instantiate(_bulletPrefab, _firepoint.position, _firepoint.rotation);
+        projectile.GetComponent<Bullet>().InitializeProjectile(BulletOwner.Tower);
 
         Vector3 lookDir = new Vector3(-nearestTarget.position.x, nearestTarget.position.y, nearestTarget.position.z);
         projectile.transform.LookAt(nearestTarget);

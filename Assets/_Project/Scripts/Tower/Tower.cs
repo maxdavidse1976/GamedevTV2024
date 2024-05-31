@@ -10,7 +10,7 @@ public class Tower : Health
     public GameObject _bulletPrefab;
     public Transform _firePoint;
     public float _projectileSpeed = 20f;
-    public float _bulletLife = 0.5f;
+    public float _bulletRange = 5f;
 
     [Header("Attack settings")] 
     public float _attackRadius = 20f;

@@ -4856,7 +4856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9205bc1bbacc90040a998067b5643d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clearBehavior: 2
+  clearBehavior: 1
   cameraShake:
     enabled: 0
     useMainCamera: 1
@@ -14671,7 +14671,6 @@ GameObject:
   - component: {fileID: 5743929841454569965}
   - component: {fileID: 6308963148027380617}
   - component: {fileID: 552422079615545608}
-  - component: {fileID: 8749276249996487153}
   - component: {fileID: -7849932380435981395}
   m_Layer: 0
   m_Name: Light Bullet Variant
@@ -14744,20 +14743,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8749276249996487153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8752745952417342901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe5664768fa84ef9a2b1af54be0c19d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroy: 0
-  LifeTime: 0.5
 --- !u!114 &-7849932380435981395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14770,6 +14755,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b472e5339e2040fb8d90fb79a120170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletOwner: 0
+  range: 0
+  hitEffectTag: HitEffect_LightBullet
 --- !u!1 &8887985408452252167
 GameObject:
   m_ObjectHideFlags: 0
@@ -14815,7 +14803,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.99215686, g: 0.86176467, b: 0.47058818, a: 1}
-  m_Intensity: 2.5954256
+  m_Intensity: 0.9365801
   m_Range: 4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082

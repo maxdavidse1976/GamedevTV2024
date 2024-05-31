@@ -1,51 +1,85 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-public abstract class Bullet : MonoBehaviour
+public enum BulletOwner
 {
-    [SerializeField] protected float bulletSpeed;
-    [SerializeField] protected int bulletDamage;
-    [SerializeField] private Rigidbody bulletRB;
-    [SerializeField] private Transform bulletTF;
+    Player, Tower, Enemy
+}
 
-    private void Awake()
+public class Bullet : MonoBehaviour
+{
+    [SerializeField] BulletOwner bulletOwner;
+    [SerializeField] float range;
+    [SerializeField] string hitEffectTag;
+
+    Vector3 startPos;
+
+    public void InitializeProjectile(BulletOwner _owner)
     {
-        Initialize();
+        bulletOwner = _owner;
+
+        if(bulletOwner == BulletOwner.Player) { range = Player.Instance.bulletRange; }
+        else if (bulletOwner == BulletOwner.Tower) { range = Tower.Instance._bulletRange; }
+        else { range = 10f; }
     }
 
-    private void Initialize()
+    private void OnEnable()
     {
-        bulletRB = GetComponent<Rigidbody>();
-        bulletTF = GetComponent<Transform>();
+        startPos = transform.position;
     }
 
-    protected virtual void Start()
+    void LateUpdate()
     {
-        LaunchProjectile();
+        RangeCheck();
     }
 
-    protected virtual void LaunchProjectile()
-    {
-        bulletRB.velocity = bulletTF.forward * bulletSpeed;
-    }
-
-    private void OnTriggerEnter(Collider _collider)
+    void OnTriggerEnter(Collider _collider)
     {
         HandleCollision(_collider);
     }
 
-    protected virtual void HandleCollision(Collider _collider)
+    void HandleCollision(Collider _collider)
     {
-        if (_collider.TryGetComponent(out Player _health))
+        if (bulletOwner == BulletOwner.Player)
         {
-            _health.TakeDamage(bulletDamage);
+            if (_collider.TryGetComponent(out Enemy _health))
+            {
+                if (!_health.IsPlayer())
+                    _health.TakeDamage(Player.Instance.damage);
+            }
+        }
+        else if (bulletOwner == BulletOwner.Tower)
+        {
+            if (_collider.TryGetComponent(out Enemy _health))
+            {
+                if (!_health.IsPlayer())
+                    _health.TakeDamage(Tower.Instance._damage);
+            }
+        }
+        else if (bulletOwner == BulletOwner.Enemy)
+        {
+            if (_collider.TryGetComponent(out Player _health))
+            {
+                if (!_health.IsPlayer())
+                    _health.TakeDamage(Player.Instance.damage);
+            }
         }
 
         DestroyProjectile();
     }
 
-    protected void DestroyProjectile()
+    void RangeCheck()
     {
-        Destroy(gameObject);
+        float currentDistance = Vector3.Distance(startPos, transform.position);
+
+        if (currentDistance > range)
+            DestroyProjectile();
+    }
+
+    void DestroyProjectile()
+    {
+        PoolManager.Instance.SpawnFromPool(hitEffectTag, transform.position, Quaternion.identity);
+        gameObject.SetActive(false);
     }
 }
