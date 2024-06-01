@@ -5714,6 +5714,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7453233771819114815}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &854415949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3134116704186950640, guid: 85a9d8c8aef5a4f40ab8122ca1987dbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7453233771819114815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &854836566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9051238300485817969, guid: 2f6c4572e07a60b43b00e1c4f489a806,
@@ -12472,6 +12478,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3201598857550446177, guid: 85a9d8c8aef5a4f40ab8122ca1987dbb,
+        type: 3}
+      propertyPath: HUDScreen
+      value: 
+      objectReference: {fileID: 854415949}
     - target: {fileID: 3201598857550446177, guid: 85a9d8c8aef5a4f40ab8122ca1987dbb,
         type: 3}
       propertyPath: UpgradeScreen

@@ -62,7 +62,7 @@ public class Enemy_Attack : MonoBehaviour
 
         foreach (RaycastHit hit in hits)
         {
-            if(hit.collider.TryGetComponent(out Player health))
+            if(hit.collider.TryGetComponent(out Health health))
             {
                 health.TakeDamage(enemyCS.damage);
             }

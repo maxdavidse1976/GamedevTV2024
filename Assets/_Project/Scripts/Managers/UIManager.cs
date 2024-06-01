@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
     [Header("UI Screens")]
     [SerializeField] GameObject TitleScreen;
     [SerializeField] GameObject GameScreen;
-    [SerializeField] GameObject UpgradeScreen;
+    [SerializeField] GameObject UpgradeScreen,HUDScreen;
     [SerializeField] GameObject EndScreen;
 
 
@@ -41,12 +41,14 @@ public class UIManager : MonoBehaviour
 
     public void ShowUpgradeScreen()
     {
+        HUDScreen.SetActive(false);
         UpgradeScreen.SetActive(true);
     }
 
     void HideUpgradeScreen()
     {
         UpgradeScreen.SetActive(false);
+        HUDScreen.SetActive(true);
     }
 
     public void ShowUpgrade(Upgrade upgrade)

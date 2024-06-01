@@ -52,6 +52,8 @@ public class EnemyManager : MonoBehaviour
 
     public void StartWave()
     {
+        Cursor.visible = false;
+
         StartCoroutine(SpawnNextWave());
     }
 
@@ -147,6 +149,8 @@ public class EnemyManager : MonoBehaviour
         waveStarted = false;
 
         UIManager.Instance.ShowUpgradeScreen();
+
+        Cursor.visible = true;
         //UpgradesManager upgradesManager = FindObjectOfType<UpgradesManager>();
         //UpgradesManager.Instance.ProvideRandomUpgrades();
         //StartWave();
