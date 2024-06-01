@@ -581,6 +581,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
+--- !u!1 &144420554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2769875085354762465, guid: 4c5bc7337db6945c9a8630a06cf50203,
+    type: 3}
+  m_PrefabInstance: {fileID: 1238673014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &147355664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9051238300485817969, guid: 2f6c4572e07a60b43b00e1c4f489a806,
@@ -1037,6 +1043,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
+--- !u!114 &213473719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7486441940551329955, guid: 85a9d8c8aef5a4f40ab8122ca1987dbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7453233771819114815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &239994980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7389,21 +7407,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2769875085354762465, guid: 4c5bc7337db6945c9a8630a06cf50203,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2891568841422445866, guid: 4c5bc7337db6945c9a8630a06cf50203,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 5604523489098914281, guid: 4c5bc7337db6945c9a8630a06cf50203,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 5816139156569118914, guid: 4c5bc7337db6945c9a8630a06cf50203,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7464,17 +7467,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2399287322885703117}
-    - target: {fileID: 6093454373638402133, guid: 4c5bc7337db6945c9a8630a06cf50203,
-        type: 3}
-      propertyPath: bulletLife
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093454373638402133, guid: 4c5bc7337db6945c9a8630a06cf50203,
-        type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 8752745952417342901, guid: e375750d6c6ab47c89baa074ab096e6b,
-        type: 3}
     - target: {fileID: 6154809612823010618, guid: 4c5bc7337db6945c9a8630a06cf50203,
         type: 3}
       propertyPath: m_Camera
@@ -12297,6 +12289,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6975130413759424563, guid: b0f23822d8aba4fa7b41a2ec65079d71,
+        type: 3}
+      propertyPath: pools.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975130413759424563, guid: b0f23822d8aba4fa7b41a2ec65079d71,
+        type: 3}
+      propertyPath: pools.Array.data[11].tag
+      value: Effect_PlayerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975130413759424563, guid: b0f23822d8aba4fa7b41a2ec65079d71,
+        type: 3}
+      propertyPath: pools.Array.data[11].size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975130413759424563, guid: b0f23822d8aba4fa7b41a2ec65079d71,
+        type: 3}
+      propertyPath: pools.Array.data[11].prefab
+      value: 
+      objectReference: {fileID: 7402742374244653691, guid: 502eac25350254466b92406b8dcb61be,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12365,6 +12378,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 7508655350807363446, guid: 14f2282a4c37d47ac8f8f538807e1240,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 144420554}
     - target: {fileID: 7508655350807363446, guid: 14f2282a4c37d47ac8f8f538807e1240,
         type: 3}
       propertyPath: gameScreenCam
@@ -12676,15 +12694,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3390564132048365084, guid: 2164e7ef6cad6a04092c1cfafa9bbcd8,
         type: 3}
-      propertyPath: _bulletLife
-      value: 5
-      objectReference: {fileID: 0}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 213473719}
     - target: {fileID: 3390564132048365084, guid: 2164e7ef6cad6a04092c1cfafa9bbcd8,
         type: 3}
-      propertyPath: _bulletPrefab
-      value: 
-      objectReference: {fileID: 8752745952417342901, guid: e375750d6c6ab47c89baa074ab096e6b,
-        type: 3}
+      propertyPath: _bulletRange
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5738502096512522763, guid: 2164e7ef6cad6a04092c1cfafa9bbcd8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12739,6 +12756,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740578466251695974, guid: 2164e7ef6cad6a04092c1cfafa9bbcd8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

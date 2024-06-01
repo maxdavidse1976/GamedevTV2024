@@ -93,3 +93,8 @@ MonoBehaviour:
       type: 3}
     size: 0
     pool: []
+  - tag: Effect_TowerDestroyed
+    prefab: {fileID: 2275749345384237408, guid: 49873f9dfb1a247ce9992a4d5cb42187,
+      type: 3}
+    size: 1
+    pool: []

@@ -17,7 +17,7 @@ public class Enemy_Attack : MonoBehaviour
 
     void Update()
     {
-        if (enemyCS.IsDead()) return;
+        if (enemyCS.IsDead() || Player.Instance.IsDead()) return;
 
         float distanceToTarget = Vector3.Distance(enemyCS.currentTarget, transform.position);
 

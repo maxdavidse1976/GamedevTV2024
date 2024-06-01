@@ -30,9 +30,9 @@ public class Enemy_AIMovement : MonoBehaviour
 
     void Update()
     {
-        if (enemyCS.IsDead()) navAgent.isStopped = true;
+        if (enemyCS.IsDead() || Player.Instance.IsDead()) navAgent.isStopped = true;
 
-        if (!player || !enemyCS.canMove || enemyCS.IsDead()) return;
+        if (player.IsDead() || !enemyCS.canMove || enemyCS.IsDead()) return;
 
         distanceToPlayer = Vector3.Distance(Player.Instance.transform.position, transform.position);
         distanceToTower = Vector3.Distance(Vector3.zero, transform.position);

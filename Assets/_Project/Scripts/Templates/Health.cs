@@ -19,12 +19,12 @@ public abstract class Health : MonoBehaviour
 	[SerializeField] protected Slider healthBar;
 
 	private float currentRegenTime;
-	//private float damageOverTime;
+	protected bool isDead;
 
 	public virtual bool IsPlayer() { return isPlayer; }
 	public virtual int GetMaxHealthValue() { return maxHealth; }
 	public virtual int GetCurrentHealthValue() { return currentHealth; }
-	public virtual bool IsDead() { return currentHealth <= 0; }
+	public virtual bool IsDead() { return isDead; }
 
 	public virtual void Heal(int _value)
 	{
@@ -47,6 +47,7 @@ public abstract class Health : MonoBehaviour
 	protected virtual void Die()
 	{
 		healthBar.value = 0;
+		isDead = true;
 
 		if (!dontRemoveDeadBody)
 		{
@@ -75,7 +76,7 @@ public abstract class Health : MonoBehaviour
 	private void ResetHealth()
 	{
 		currentHealth = maxHealth;
-
+		isDead = false;
 	}
 
 	protected virtual void OnEnable()

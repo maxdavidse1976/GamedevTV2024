@@ -6,6 +6,11 @@ public class Enemy_AnimatorController : MonoBehaviour
 {
     [SerializeField] Animator anim;
 
+    void LateUpdate()
+    {
+        if (Player.Instance.IsDead()) PlayVictoryAnimation();
+    }
+
     public void PlayMovementAnimations(bool _isMoving)
     {
         anim.SetBool("Is Moving", _isMoving);
@@ -19,5 +24,15 @@ public class Enemy_AnimatorController : MonoBehaviour
     public void PlayDeathAnimation()
     {
         anim.SetTrigger("Dead" + Random.Range(0, 1));
+    }
+
+    public void PlayVictoryAnimation()
+    {
+        anim.SetBool("Victory",true);
+    }
+
+    private void OnDisable()
+    {
+        anim.SetBool("Victory",false);
     }
 }

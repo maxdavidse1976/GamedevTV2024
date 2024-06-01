@@ -1118,7 +1118,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.29
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1142,7 +1142,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -1169,14 +1169,15 @@ MonoBehaviour:
   regenerateRate: 0.5
   healthBar: {fileID: 0}
   moveSpeed: 5
-  bulletPrefab: {fileID: 6160900465098361685, guid: eaac186134b1d430b9082495ad056a62,
+  bulletPrefab: {fileID: 8752745952417342901, guid: e375750d6c6ab47c89baa074ab096e6b,
     type: 3}
   firePoint: {fileID: 2967969630570469151}
   damage: 50
   fireRate: 0.5
   projectileSpeed: 20
-  bulletLife: 0.5
+  bulletRange: 5
   crosshair: {fileID: 0}
+  _deathEffect: Effect_PlayerDeath
 --- !u!114 &4284709597271155141
 MonoBehaviour:
   m_ObjectHideFlags: 0

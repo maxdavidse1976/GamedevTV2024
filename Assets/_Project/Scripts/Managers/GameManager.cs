@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [Space(5)]
     [Header("Game")]
     public bool gameStarted;
+    [SerializeField] GameObject player;
 
     [Space(5)]
     [Header("Cameras")]
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         titleScreenCam.SetActive(true);
         gameScreenCam.SetActive(false);
         deathScreenCam.SetActive(false);
+        player.SetActive(false);
         UIManager.Instance.ShowTitleScreen();
     }
 
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
         titleScreenCam.SetActive(false);
         gameScreenCam.SetActive(true);
         deathScreenCam.SetActive(false);
+        player.SetActive(true);
         UIManager.Instance.ShowGameScreen();
         EnemyManager.Instance.StartWave();
         gameStarted = true;

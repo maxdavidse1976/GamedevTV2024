@@ -11,7 +11,7 @@ public class Player_Look : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.Instance.gameStarted)
+        if (!GameManager.Instance.gameStarted || !EnemyManager.Instance.waveStarted)
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;

@@ -8,6 +8,8 @@ public class Tower_Shoot : MonoBehaviour
 
     void Update()
     {
+        if (!EnemyManager.Instance.waveStarted || Player.Instance.IsDead()) return;
+
         RaycastHit[] hits = Physics.SphereCastAll(Tower.Instance._firePoint.position, Tower.Instance._attackRadius, Vector3.up);
         foreach (RaycastHit hit in hits)
         {
@@ -27,7 +29,7 @@ public class Tower_Shoot : MonoBehaviour
             }
         }
 
-        if (nearestTarget && Time.time >= nextFireTime)
+        if (nearestTarget && Time.time >= nextFireTime && EnemyManager.Instance.waveStarted)
         {
             Shoot(Tower.Instance._bulletPrefab, Tower.Instance._firePoint, Tower.Instance._projectileSpeed);
             nextFireTime = Time.time + Tower.Instance._fireRate;

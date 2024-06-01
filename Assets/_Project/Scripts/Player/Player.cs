@@ -19,6 +19,9 @@ public class Player : Health
     public float bulletRange = 5f;
     public Image crosshair;
 
+    [Header("Player Effects Settings")]
+    [SerializeField] string _deathEffect;
+
     private void Awake()
     {
         Instance = this;
@@ -26,8 +29,12 @@ public class Player : Health
 
     protected override void Die()
     {
+
+        if (!isDead)
+            PoolManager.Instance.SpawnFromPool(_deathEffect, transform.position, Quaternion.identity);
+
         Player_Animator.Instance.PlayDeathAnimation();
-        base.Die();
         GameManager.Instance.EndGame();
+        base.Die();
     }
 }

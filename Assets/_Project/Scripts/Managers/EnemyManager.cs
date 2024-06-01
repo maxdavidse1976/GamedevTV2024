@@ -31,7 +31,7 @@ public class EnemyManager : MonoBehaviour
 
     List<Enemy> activeEnemies = new List<Enemy>();
 
-    bool waveStarted;
+    public bool waveStarted;
 
     void Awake()
     {
