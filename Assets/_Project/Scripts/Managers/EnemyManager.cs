@@ -10,6 +10,7 @@ public class EnemyManager : MonoBehaviour
 
     [Header("UI Settings")]
     [SerializeField] TMPro.TMP_Text countdownText; // UI Text element for countdown
+    [SerializeField] TMPro.TMP_Text enemyText; // UI Text element for enemy count
 
     [Space(5)]
 
@@ -29,8 +30,8 @@ public class EnemyManager : MonoBehaviour
     int enemyCount2 = 0;
 
     List<Enemy> activeEnemies = new List<Enemy>();
-    //TODO: Add objects to pool after they die and reuse them.
-    List<GameObject> enemyPool = new List<GameObject>();
+
+    bool waveStarted;
 
     void Awake()
     {
@@ -43,9 +44,10 @@ public class EnemyManager : MonoBehaviour
         if (m_destroyOnLoad) { DontDestroyOnLoad(this.gameObject); }
     }
 
-    private void Start()
+    void LateUpdate()
     {
-        //StartWave();
+        if(waveStarted)
+        enemyText.text = "Enemies " + activeEnemies.Count.ToString() + "/" + (initialEnemies + (waveNumber * 2));
     }
 
     public void StartWave()
@@ -55,6 +57,8 @@ public class EnemyManager : MonoBehaviour
 
     IEnumerator SpawnNextWave()
     {
+        enemyText.text = "";
+
         enemyCount0 = 0;
         enemyCount1 = 0;
         enemyCount2 = 0;
@@ -65,13 +69,13 @@ public class EnemyManager : MonoBehaviour
         float countdown = waveCountdown;
         while (countdown > 0)
         {
-            countdownText.text = "Next Wave in: " + countdown.ToString();
+            countdownText.text = "Next Wave in " + countdown.ToString();
 
             yield return new WaitForSeconds(1f);
             countdown -= 1f;
         }
-        countdownText.text = "";
-
+        countdownText.text = "Wave " + waveNumber.ToString();
+        waveStarted = true;
         yield return SpawnEnemies(initialEnemies + (waveNumber * 2));
 
         yield return new WaitUntil(() => activeEnemies.Count == 0);
@@ -91,7 +95,8 @@ public class EnemyManager : MonoBehaviour
             } while (spawnPosition.magnitude < safeZoneRadius);
 
             int prefabIndex = GetNextPrefabIndex();
-            GameObject enemy = Instantiate(enemyPrefabs[prefabIndex], spawnPosition, Quaternion.identity);
+            //GameObject enemy = Instantiate(enemyPrefabs[prefabIndex], spawnPosition, Quaternion.identity);
+            GameObject enemy = PoolManager.Instance.SpawnFromPool("Enemy_"+prefabIndex, spawnPosition, Quaternion.identity);
             
             yield return new WaitForSeconds(Random.Range(0.5f, 2f));
         }
@@ -139,6 +144,8 @@ public class EnemyManager : MonoBehaviour
 
     void EndWave()
     {
+        waveStarted = false;
+
         //UpgradesManager upgradesManager = FindObjectOfType<UpgradesManager>();
         //upgradesManager.ProvideRandomUpgrades();
         //StartWave();

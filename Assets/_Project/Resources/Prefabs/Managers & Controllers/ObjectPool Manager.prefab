@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2424978908652018767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6209545986610516592}
+  - component: {fileID: 6975130413759424563}
+  m_Layer: 0
+  m_Name: ObjectPool Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6209545986610516592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424978908652018767}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6975130413759424563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424978908652018767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 387d861b6c935443ea686cbe71625419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Bullet_Light
+    prefab: {fileID: 8752745952417342901, guid: e375750d6c6ab47c89baa074ab096e6b,
+      type: 3}
+    size: 10
+    pool: []
+  - tag: Bullet_Fireball
+    prefab: {fileID: 8752745952417342901, guid: 617fc08e06aa24f85974ecba2cdfb0d1,
+      type: 3}
+    size: 5
+    pool: []
+  - tag: Bullet_Thunderball
+    prefab: {fileID: 8752745952417342901, guid: e1bb2ca925a6b426bb7a7f41ce0be8b5,
+      type: 3}
+    size: 5
+    pool: []
+  - tag: Enemy_0
+    prefab: {fileID: 6210604548699258967, guid: 618e3be01cd824f9dba1cfe62fef55b1,
+      type: 3}
+    size: 0
+    pool: []
+  - tag: Enemy_1
+    prefab: {fileID: 6210604548699258967, guid: d58a41bb4249b63448be71065dbf9d56,
+      type: 3}
+    size: 0
+    pool: []
+  - tag: Enemy_2
+    prefab: {fileID: 6210604548699258967, guid: b5d5391bcf740db4eb5ff5c126697e56,
+      type: 3}
+    size: 0
+    pool: []
+  - tag: Enemy_3
+    prefab: {fileID: 6210604548699258967, guid: 1637ce2c750641044b558156d43086b6,
+      type: 3}
+    size: 0
+    pool: []
+  - tag: HitEffect_LightBullet
+    prefab: {fileID: 126726300075313585, guid: 7de53938a1f56407ea74f6431ee3f0e8, type: 3}
+    size: 0
+    pool: []
+  - tag: HitEffect_Fireball
+    prefab: {fileID: 645577192152299691, guid: 313603cec2a58448181fea13fa86cbf8, type: 3}
+    size: 0
+    pool: []
+  - tag: HitEffect_Thunderball
+    prefab: {fileID: 4440456681783599433, guid: 14917496f826446618f5f720a18b29d2,
+      type: 3}
+    size: 0
+    pool: []
