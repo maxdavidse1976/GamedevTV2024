@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  dontDestroy: 0
+  dontDestroy: 1
   dontRemoveDeadBody: 0
   maxHealth: 100
   currentHealth: 0

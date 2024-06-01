@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     [Header("UI Screens")]
     [SerializeField] GameObject TitleScreen;
     [SerializeField] GameObject GameScreen;
+    [SerializeField] GameObject UpgradeScreen;
     [SerializeField] GameObject EndScreen;
 
 
@@ -40,12 +41,12 @@ public class UIManager : MonoBehaviour
 
     public void ShowUpgradeScreen()
     {
-        _upgradeCanvas.gameObject.SetActive(true);
+        UpgradeScreen.SetActive(true);
     }
 
-    public void HideUpgradeScreen()
+    void HideUpgradeScreen()
     {
-        _upgradeCanvas.gameObject.SetActive(false);
+        UpgradeScreen.SetActive(false);
     }
 
     public void ShowUpgrade(Upgrade upgrade)
@@ -87,8 +88,10 @@ public class UIManager : MonoBehaviour
 
     public void ContinueGamePlay()
     {
-
+        HideUpgradeScreen();
+        EnemyManager.Instance.StartWave();
     }
+
     public void ShowTitleScreen()
     {
         TitleScreen.SetActive(true);

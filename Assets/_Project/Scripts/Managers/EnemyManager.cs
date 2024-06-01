@@ -146,8 +146,9 @@ public class EnemyManager : MonoBehaviour
     {
         waveStarted = false;
 
+        UIManager.Instance.ShowUpgradeScreen();
         //UpgradesManager upgradesManager = FindObjectOfType<UpgradesManager>();
-        //upgradesManager.ProvideRandomUpgrades();
+        //UpgradesManager.Instance.ProvideRandomUpgrades();
         //StartWave();
     }
 
