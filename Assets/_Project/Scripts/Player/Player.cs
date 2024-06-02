@@ -22,9 +22,17 @@ public class Player : Health
     [Header("Player Effects Settings")]
     [SerializeField] string _deathEffect;
 
+    public int currentScore;
+
     private void Awake()
     {
         Instance = this;
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        currentScore = 0;
     }
 
     protected override void Die()

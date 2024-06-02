@@ -21,9 +21,10 @@ public class Enemy : Health
     public float attackRate;
     public int damage;
 
-    [Header("Other References")]
+    [Header("Other Settings")]
     public Vector3 currentTarget;
     public Enemy_AnimatorController animator;
+    [SerializeField] float disableAfterTime = 2f;
 
     protected override void OnEnable()
     {
@@ -53,11 +54,14 @@ public class Enemy : Health
 
     protected override void Die()
     {
-        StartCoroutine(DeathTimeCo(1.5f));
+        StartCoroutine(DeathTimeCo(disableAfterTime));
     }
 
     IEnumerator DeathTimeCo(float _seconds)
     {
+        Player.Instance.currentScore += 100;
+        UIManager.Instance.UpdateScoreUI(Player.Instance.currentScore);
+
         animator.PlayDeathAnimation();
         yield return new WaitForSeconds(_seconds);
         base.Die();
