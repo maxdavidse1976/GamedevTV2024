@@ -25,6 +25,12 @@ public class Enemy : Health
     public Vector3 currentTarget;
     public Enemy_AnimatorController animator;
     [SerializeField] float disableAfterTime = 2f;
+    [SerializeField] Collider colliderComponent;
+
+    private void Start()
+    {
+        colliderComponent = GetComponent<Collider>();
+    }
 
     protected override void OnEnable()
     {
@@ -34,6 +40,8 @@ public class Enemy : Health
         {
             EnemyManager.Instance.RegisterEnemy(this);
         }
+
+        colliderComponent.enabled = true;
     }
 
     private void OnDisable()
@@ -59,6 +67,10 @@ public class Enemy : Health
 
     IEnumerator DeathTimeCo(float _seconds)
     {
+        colliderComponent.enabled = false;
+
+        canMove = false;
+
         Player.Instance.currentScore += 100;
         UIManager.Instance.UpdateScoreUI(Player.Instance.currentScore);
 

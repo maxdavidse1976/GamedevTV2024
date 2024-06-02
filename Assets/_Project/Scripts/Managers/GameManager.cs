@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [Space(5)]
     [Header("Game")]
     public bool gameStarted;
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject player,tower;
 
     [Space(5)]
     [Header("Cameras")]
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameScreenCam;
     [SerializeField] GameObject deathScreenCam;
 
-
+    Vector3 playerStartPos;
 
     void Awake()
     {
@@ -35,11 +35,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         TitleScene();
+        playerStartPos = player.transform.position;
     }
 
     public void TitleScene()
     {
         gameStarted = false;
+        tower.SetActive(true);
         titleScreenCam.SetActive(true);
         gameScreenCam.SetActive(false);
         deathScreenCam.SetActive(false);
@@ -49,13 +51,25 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        Cursor.visible = false;
+        Tower.Instance.Heal(Tower.Instance.GetMaxHealthValue());
         titleScreenCam.SetActive(false);
-        gameScreenCam.SetActive(true);
         deathScreenCam.SetActive(false);
         player.SetActive(true);
+        tower.SetActive(true);
+        gameScreenCam.SetActive(true);
         UIManager.Instance.ShowGameScreen();
         EnemyManager.Instance.StartWave();
         gameStarted = true;
+    }
+
+    public void RestartGame()
+    {
+        Tower.Instance.Heal(Tower.Instance.GetMaxHealthValue());
+        EnemyManager.Instance.ClearEnemies();
+        player.SetActive(false);
+        player.transform.position = playerStartPos;
+        StartGame();
     }
 
     public void EndGame()
@@ -65,5 +79,10 @@ public class GameManager : MonoBehaviour
         gameScreenCam.SetActive(false);
         deathScreenCam.SetActive(true);
         UIManager.Instance.ShowEndScreen();
+    }
+
+    public void QuitApplication()
+    {
+        Application.Quit();
     }
 }

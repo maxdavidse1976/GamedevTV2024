@@ -97,6 +97,7 @@ public class UIManager : MonoBehaviour
 
     public void ContinueGamePlay()
     {
+        Cursor.visible = false;
         HideUpgradeScreen();
         EnemyManager.Instance.StartWave();
     }

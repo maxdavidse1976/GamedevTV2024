@@ -30,7 +30,7 @@ public class Enemy_AIMovement : MonoBehaviour
 
     void Update()
     {
-        if (enemyCS.IsDead() || Player.Instance.IsDead()) navAgent.isStopped = true;
+        if (enemyCS.IsDead() || Player.Instance.IsDead() || !enemyCS.canMove) navAgent.isStopped = true;
 
         if (player.IsDead() || !enemyCS.canMove || enemyCS.IsDead()) return;
 

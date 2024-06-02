@@ -52,9 +52,15 @@ public class EnemyManager : MonoBehaviour
 
     public void StartWave()
     {
-        Cursor.visible = false;
-
         StartCoroutine(SpawnNextWave());
+    }
+
+    public void ClearEnemies()
+    {
+        foreach (Enemy enemy in activeEnemies)
+        {
+            enemy.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator SpawnNextWave()

@@ -37,7 +37,6 @@ public class Player : Health
 
     protected override void Die()
     {
-
         if (!isDead)
             PoolManager.Instance.SpawnFromPool(_deathEffect, transform.position, Quaternion.identity);
 

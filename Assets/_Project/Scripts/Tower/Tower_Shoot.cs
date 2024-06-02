@@ -10,7 +10,7 @@ public class Tower_Shoot : MonoBehaviour
     {
         if (!EnemyManager.Instance.waveStarted || Player.Instance.IsDead()) return;
 
-        RaycastHit[] hits = Physics.SphereCastAll(Tower.Instance._firePoint.position, Tower.Instance._attackRadius, Vector3.up);
+        RaycastHit[] hits = Physics.SphereCastAll(Tower.Instance._firePoint.position, Tower.Instance._bulletRange, Vector3.up);
         foreach (RaycastHit hit in hits)
         {
             if(hit.collider.TryGetComponent<Enemy>(out Enemy enemy))

@@ -8,7 +8,7 @@ public class Tower : Health
     [SerializeField] GameObject _towerGO;
     [SerializeField] string _deathEffect;
 
-    [Header("Relic settings")] 
+    [Header("Attack settings")] 
     public int _damage = 100;
     public float _fireRate = 0.05f;
     public GameObject _bulletPrefab;
@@ -16,8 +16,8 @@ public class Tower : Health
     public float _projectileSpeed = 20f;
     public float _bulletRange = 5f;
 
-    [Header("Attack settings")] 
-    public float _attackRadius = 20f;
+    //[Header("Attack settings")]
+    //public float _attackRadius = 20f;
 
     private void Awake()
     {
