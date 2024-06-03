@@ -468,17 +468,16 @@ MonoBehaviour:
   currentHealth: 0
   regenerateAmount: 1
   regenerateRate: 2
-  healthBar: {fileID: 6846167052798310992}
+  healthBar: {fileID: 0}
   _towerGO: {fileID: 6740578466251695974}
   _deathEffect: Effect_TowerDestroyed
-  _damage: 80
+  _damage: 100
   _fireRate: 1
-  _bulletPrefab: {fileID: 8752745952417342901, guid: e375750d6c6ab47c89baa074ab096e6b,
+  _bulletPrefab: {fileID: 8752745952417342901, guid: e1bb2ca925a6b426bb7a7f41ce0be8b5,
     type: 3}
   _firePoint: {fileID: 7070901256795414587}
   _projectileSpeed: 20
-  _bulletRange: 5
-  _attackRadius: 20
+  _bulletRange: 15
 --- !u!114 &4334000265227452267
 MonoBehaviour:
   m_ObjectHideFlags: 0

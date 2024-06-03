@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
         player.SetActive(false);
         UIManager.Instance.ShowTitleScreen();
         EnemyManager.Instance.ResetEnemyWaves();
+
+        AudioManager.Instance.PauseSound("BGM_TitleMusic");
     }
 
     public void StartGame()
@@ -63,6 +65,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.ShowGameScreen();
         EnemyManager.Instance.StartWave();
         gameStarted = true;
+        AudioManager.Instance.PauseSound("BGM_GameMusic");
     }
 
     public void RestartGame()
@@ -77,6 +80,7 @@ public class GameManager : MonoBehaviour
         gameScreenCam.SetActive(false);
         deathScreenCam.SetActive(true);
         UIManager.Instance.ShowEndScreen();
+        AudioManager.Instance.PauseSound("BGM_EndMusic");
     }
 
     public void QuitApplication()

@@ -40,6 +40,8 @@ public class Player : Health
         if (!isDead)
             PoolManager.Instance.SpawnFromPool(_deathEffect, transform.position, Quaternion.identity);
 
+        AudioManager.Instance.PlaySound("SFXGrunt0");
+
         Player_Animator.Instance.PlayDeathAnimation();
         GameManager.Instance.EndGame();
         base.Die();

@@ -49,14 +49,14 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        //if (!PlayerPrefs.HasKey("Master")&& !PlayerPrefs.HasKey("Music") && !PlayerPrefs.HasKey("SFX") && !PlayerPrefs.HasKey("UI"))
-        //{
-        //    ResetSettings();
-        //}
-        //else
-        //{
-        //    RecallSettings();
-        //}
+        if (!PlayerPrefs.HasKey("Master") && !PlayerPrefs.HasKey("Music") && !PlayerPrefs.HasKey("SFX") && !PlayerPrefs.HasKey("UI"))
+        {
+            ResetSettings();
+        }
+        else
+        {
+            RecallSettings();
+        }
     }
 
     private void InitializeAudioSources()

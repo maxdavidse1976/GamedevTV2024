@@ -1169,15 +1169,16 @@ MonoBehaviour:
   regenerateRate: 0.5
   healthBar: {fileID: 0}
   moveSpeed: 5
-  bulletPrefab: {fileID: 8752745952417342901, guid: e375750d6c6ab47c89baa074ab096e6b,
+  bulletPrefab: {fileID: 8752745952417342901, guid: 617fc08e06aa24f85974ecba2cdfb0d1,
     type: 3}
   firePoint: {fileID: 2967969630570469151}
   damage: 50
   fireRate: 0.5
   projectileSpeed: 20
-  bulletRange: 5
+  bulletRange: 8
   crosshair: {fileID: 0}
   _deathEffect: Effect_PlayerDeath
+  currentScore: 0
 --- !u!114 &4284709597271155141
 MonoBehaviour:
   m_ObjectHideFlags: 0

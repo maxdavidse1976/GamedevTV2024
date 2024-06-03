@@ -68,13 +68,15 @@ public class Enemy : Health
     IEnumerator DeathTimeCo(float _seconds)
     {
         colliderComponent.enabled = false;
-
+        isDead = true;
         canMove = false;
 
         Player.Instance.currentScore += 100;
         UIManager.Instance.UpdateScoreUI(Player.Instance.currentScore);
 
         animator.PlayDeathAnimation();
+        AudioManager.Instance.PlaySound("SFXGrunt1");
+
         yield return new WaitForSeconds(_seconds);
         base.Die();
     }

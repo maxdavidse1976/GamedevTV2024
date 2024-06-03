@@ -515,13 +515,13 @@ MonoBehaviour:
   isPlayer: 0
   dontDestroy: 1
   dontRemoveDeadBody: 0
-  maxHealth: 100
+  maxHealth: 400
   currentHealth: 0
   regenerateAmount: 2
-  regenerateRate: 0.5
+  regenerateRate: 0
   healthBar: {fileID: 7304955303635483278}
   stoppingDistance: 2
-  moveSpeed: 4
+  moveSpeed: 3
   chaseRange: 5
   canMove: 0
   bulletPrefab: {fileID: 0}
@@ -532,11 +532,11 @@ MonoBehaviour:
   projectileSpeed: 15
   bulletLife: 5
   attackRange: 2
-  attackRate: 2
+  attackRate: 3
   damage: 10
   currentTarget: {x: 0, y: 0, z: 0}
   animator: {fileID: -2190319604516735383}
-  disableAfterTime: 2
+  disableAfterTime: 2.5
   colliderComponent: {fileID: 1931192640947002229}
 --- !u!114 &3645005437308394414
 MonoBehaviour:

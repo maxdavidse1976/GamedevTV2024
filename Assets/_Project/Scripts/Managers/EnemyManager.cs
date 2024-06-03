@@ -48,7 +48,7 @@ public class EnemyManager : MonoBehaviour
     {
         if (waveStarted)
         {
-            enemyText.text = "Enemies " + activeEnemies.Count.ToString() + "/" + (initialEnemies + waveNumber);
+            enemyText.text = "Enemies " + activeEnemies.Count.ToString() + "/" + (initialEnemies + (waveNumber*2));
 
             if(activeEnemies.Count == 0)
             {
@@ -167,12 +167,13 @@ public class EnemyManager : MonoBehaviour
 
         waveStarted = false;
 
-        UIManager.Instance.ShowUpgradeScreen();
+        //UIManager.Instance.ShowUpgradeScreen();
 
         Cursor.visible = true;
         //UpgradesManager upgradesManager = FindObjectOfType<UpgradesManager>();
         //UpgradesManager.Instance.ProvideRandomUpgrades();
-        //StartWave();
+
+        StartWave();
     }
 
     public void RegisterEnemy(Enemy enemy)

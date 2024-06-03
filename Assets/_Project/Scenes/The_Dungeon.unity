@@ -7169,11 +7169,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2399287322885703117}
-    - target: {fileID: 6093454373638402133, guid: 4c5bc7337db6945c9a8630a06cf50203,
-        type: 3}
-      propertyPath: bulletRange
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 6154809612823010618, guid: 4c5bc7337db6945c9a8630a06cf50203,
         type: 3}
       propertyPath: m_Camera
@@ -11001,7 +10996,98 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_destroyOnLoad: 0
-  m_audioProfileDataList: []
+  m_audioProfileDataList:
+  - name: BGM_TitleMusic
+    clip: {fileID: 0}
+    clipType: 0
+    volume: 0.5
+    playOnAwake: 0
+    loop: 1
+    randomizePitch: 0
+  - name: BGM_GameMusic
+    clip: {fileID: 0}
+    clipType: 0
+    volume: 0.5
+    playOnAwake: 0
+    loop: 1
+    randomizePitch: 0
+  - name: BGM_EndMusic
+    clip: {fileID: 0}
+    clipType: 0
+    volume: 0.5
+    playOnAwake: 0
+    loop: 1
+    randomizePitch: 0
+  - name: SFX_Grunt0
+    clip: {fileID: 8300000, guid: f339bc3982e7f4b33ae344e44bd64986, type: 3}
+    clipType: 1
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+    randomizePitch: 1
+  - name: SFX_Grunt1
+    clip: {fileID: 8300000, guid: 368ab6596d62b471db9a7a42cae45197, type: 3}
+    clipType: 1
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+    randomizePitch: 1
+  - name: SFX_ShootThunder
+    clip: {fileID: 0}
+    clipType: 1
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+    randomizePitch: 1
+  - name: SFX_ThunderHit
+    clip: {fileID: 0}
+    clipType: 1
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+    randomizePitch: 1
+  - name: SFX_ShootFire
+    clip: {fileID: 0}
+    clipType: 1
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+    randomizePitch: 1
+  - name: SFX_FireHit
+    clip: {fileID: 0}
+    clipType: 1
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+    randomizePitch: 1
+  - name: SFX_ShootLight
+    clip: {fileID: 0}
+    clipType: 1
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+    randomizePitch: 1
+  - name: SFX_LightHit
+    clip: {fileID: 0}
+    clipType: 1
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+    randomizePitch: 1
+  - name: UI_Hover
+    clip: {fileID: 0}
+    clipType: 2
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+    randomizePitch: 0
+  - name: UI_Click
+    clip: {fileID: 0}
+    clipType: 2
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+    randomizePitch: 0
   m_mixer: {fileID: 24100000, guid: 03c733fea6c814accae67cb761afbf15, type: 2}
   m_musicMixer: {fileID: 2108201429367656617, guid: 03c733fea6c814accae67cb761afbf15,
     type: 2}
@@ -12455,11 +12541,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 213473719}
-    - target: {fileID: 3390564132048365084, guid: 2164e7ef6cad6a04092c1cfafa9bbcd8,
-        type: 3}
-      propertyPath: _bulletRange
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 5738502096512522763, guid: 2164e7ef6cad6a04092c1cfafa9bbcd8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12514,11 +12595,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 6740578466251695974, guid: 2164e7ef6cad6a04092c1cfafa9bbcd8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
