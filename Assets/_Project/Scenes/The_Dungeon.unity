@@ -11144,7 +11144,7 @@ MonoBehaviour:
   - name: BGM_TitleMusic
     clip: {fileID: 8300000, guid: 25b151419d1cf5a408d3d61918a35471, type: 3}
     clipType: 0
-    volume: 0.5
+    volume: 0.289
     playOnAwake: 0
     loop: 1
     randomizePitch: 0
@@ -11156,9 +11156,9 @@ MonoBehaviour:
     loop: 1
     randomizePitch: 0
   - name: BGM_EndMusic
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 25b151419d1cf5a408d3d61918a35471, type: 3}
     clipType: 0
-    volume: 0.5
+    volume: 0.18
     playOnAwake: 0
     loop: 1
     randomizePitch: 0
@@ -12355,7 +12355,7 @@ PrefabInstance:
     - target: {fileID: 1173056434954898803, guid: 85a9d8c8aef5a4f40ab8122ca1987dbb,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1173056434954898803, guid: 85a9d8c8aef5a4f40ab8122ca1987dbb,
         type: 3}
@@ -12367,6 +12367,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1262655108}
+    - target: {fileID: 2093917691934784761, guid: 85a9d8c8aef5a4f40ab8122ca1987dbb,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093917691934784761, guid: 85a9d8c8aef5a4f40ab8122ca1987dbb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2633866907879695717, guid: 85a9d8c8aef5a4f40ab8122ca1987dbb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12561,6 +12571,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181879201740834658, guid: 85a9d8c8aef5a4f40ab8122ca1987dbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8292840191272305224, guid: 85a9d8c8aef5a4f40ab8122ca1987dbb,
         type: 3}
