@@ -11177,30 +11177,30 @@ MonoBehaviour:
     loop: 0
     randomizePitch: 1
   - name: SFX_ShootThunder
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 062f0f962280640419e03c2152a2e511, type: 3}
     clipType: 1
-    volume: 0.5
+    volume: 0.201
     playOnAwake: 0
     loop: 0
     randomizePitch: 1
   - name: SFX_ThunderHit
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 401177743b2b16a439e3bb8317bf2145, type: 3}
     clipType: 1
-    volume: 0.5
+    volume: 0.232
     playOnAwake: 0
     loop: 0
     randomizePitch: 1
   - name: SFX_ShootFire
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 071329f9795d65647b258e0e30628ab9, type: 3}
     clipType: 1
-    volume: 0.5
+    volume: 0.227
     playOnAwake: 0
     loop: 0
     randomizePitch: 1
   - name: SFX_FireHit
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: c3f9fcb6d53671145b1ab14238e612ee, type: 3}
     clipType: 1
-    volume: 0.5
+    volume: 0.18
     playOnAwake: 0
     loop: 0
     randomizePitch: 1
