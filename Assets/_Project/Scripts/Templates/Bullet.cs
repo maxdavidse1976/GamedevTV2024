@@ -85,7 +85,7 @@ public class Bullet : MonoBehaviour
     void SpawnHitEffect()
     {
         PoolManager.Instance.SpawnFromPool(hitEffectTag, transform.position, Quaternion.identity);
-        if(bulletOwner == BulletOwner.Player) AudioManager.Instance.PauseSound("SFX_FireHit");
-        if(bulletOwner == BulletOwner.Tower) AudioManager.Instance.PauseSound("SFX_ThunderHit");
+        if(bulletOwner == BulletOwner.Player) AudioManager.Instance.PlaySound("SFX_FireHit");
+        if(bulletOwner == BulletOwner.Tower) AudioManager.Instance.PlaySound("SFX_ThunderHit");
     }
 }

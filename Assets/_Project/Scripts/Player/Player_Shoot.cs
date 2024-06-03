@@ -46,7 +46,7 @@ public class Player_Shoot : MonoBehaviour
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         rb.velocity = direction.normalized * projectileSpeed;
 
-        AudioManager.Instance.PauseSound("SFX_ShootFire");
+        AudioManager.Instance.PlaySound("SFX_ShootFire");
     }
 
 

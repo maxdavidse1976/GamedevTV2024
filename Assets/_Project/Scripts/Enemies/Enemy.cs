@@ -75,7 +75,7 @@ public class Enemy : Health
         UIManager.Instance.UpdateScoreUI(Player.Instance.currentScore);
 
         animator.PlayDeathAnimation();
-        AudioManager.Instance.PlaySound("SFXGrunt1");
+        AudioManager.Instance.PlaySound("SFX_Grunt1");
 
         yield return new WaitForSeconds(_seconds);
         base.Die();
