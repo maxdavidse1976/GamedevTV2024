@@ -46,8 +46,15 @@ public class EnemyManager : MonoBehaviour
 
     void LateUpdate()
     {
-        if(waveStarted)
-        enemyText.text = "Enemies " + activeEnemies.Count.ToString() + "/" + (initialEnemies + (waveNumber * 2));
+        if (waveStarted)
+        {
+            enemyText.text = "Enemies " + activeEnemies.Count.ToString() + "/" + (initialEnemies + waveNumber);
+
+            if(activeEnemies.Count == 0)
+            {
+                EndWave();
+            }
+        }
     }
 
     public void StartWave()
@@ -55,7 +62,15 @@ public class EnemyManager : MonoBehaviour
         StartCoroutine(SpawnNextWave());
     }
 
-    public void ClearEnemies()
+    public void ResetEnemyWaves()
+    {
+        StopCoroutine(SpawnNextWave());
+        waveStarted = false;
+        waveNumber = 0;
+        ClearEnemies();
+    }
+
+    void ClearEnemies()
     {
         foreach (Enemy enemy in activeEnemies)
         {
@@ -85,10 +100,6 @@ public class EnemyManager : MonoBehaviour
         countdownText.text = "Wave " + waveNumber.ToString();
         waveStarted = true;
         yield return SpawnEnemies(initialEnemies + (waveNumber * 2));
-
-        yield return new WaitUntil(() => activeEnemies.Count == 0);
-
-        EndWave();
     }
 
     IEnumerator SpawnEnemies(int count)
@@ -152,6 +163,8 @@ public class EnemyManager : MonoBehaviour
 
     void EndWave()
     {
+        if (!GameManager.Instance.gameStarted) return;
+
         waveStarted = false;
 
         UIManager.Instance.ShowUpgradeScreen();

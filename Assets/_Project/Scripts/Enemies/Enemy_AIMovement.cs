@@ -40,11 +40,13 @@ public class Enemy_AIMovement : MonoBehaviour
         if (distanceToPlayer <= enemyCS.chaseRange || distanceToPlayer < distanceToTower)
         {
             enemyCS.currentTarget = Player.Instance.transform.position;
+            navAgent.isStopped = false;
             MoveAI(enemyCS.currentTarget);
         }
         else
         {
             enemyCS.currentTarget = Vector3.zero;
+            navAgent.isStopped = false;
             MoveAI(Vector3.zero);
         }
 

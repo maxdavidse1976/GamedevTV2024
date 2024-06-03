@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
     [Space(5)]
     [Header("UI Elements")]
     [SerializeField] TMP_Text scoreText;
+    [SerializeField] TMP_Text endScoreText;
 
     public bool IsUpgradeScreenActive() => _upgradeCanvas.gameObject.activeSelf;
     
@@ -90,9 +91,16 @@ public class UIManager : MonoBehaviour
         
     }
 
+    public void ShowLeaderboard()
+    {
+        ShowTitleScreen();
+        TitleScreen.SetActive(false);
+    }
+
     public void UpdateScoreUI(int _score)
     {
         scoreText.text = _score.ToString();
+        endScoreText.text = _score.ToString();
     }
 
     public void ContinueGamePlay()

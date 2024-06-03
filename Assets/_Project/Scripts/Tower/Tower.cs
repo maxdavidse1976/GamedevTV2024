@@ -32,4 +32,10 @@ public class Tower : Health
         PoolManager.Instance.SpawnFromPool(_deathEffect, _towerGO.transform.position, Quaternion.identity);
         GameManager.Instance.EndGame();
     }
+
+    public void RespawnTower()
+    {
+        Heal(GetMaxHealthValue());
+        _towerGO.SetActive(true);
+    }
 }

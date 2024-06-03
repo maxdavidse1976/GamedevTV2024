@@ -65,6 +65,10 @@ public class LeaderboardManager : MonoBehaviour
             _leaderboardSubmissionPanel.SetActive(false);
             _leaderboardPanel.SetActive(true);
             _leaderboardSubmissionText.SetActive(true);
+
+            GameManager.Instance.TitleScene();
+            UIManager.Instance.ShowLeaderboard();
+
             GetLeaderBoard();
         }));
     }

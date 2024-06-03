@@ -45,24 +45,24 @@ public class Bullet : MonoBehaviour
         {
             if (_collider.TryGetComponent(out Enemy _health))
             {
-                if (!_health.IsPlayer())
-                    _health.TakeDamage(Player.Instance.damage);
+                SpawnHitEffect();
+                _health.TakeDamage(Player.Instance.damage);
             }
         }
         else if (bulletOwner == BulletOwner.Tower)
         {
             if (_collider.TryGetComponent(out Enemy _health))
             {
-                if (!_health.IsPlayer())
-                    _health.TakeDamage(Tower.Instance._damage);
+                SpawnHitEffect();
+                _health.TakeDamage(Tower.Instance._damage);
             }
         }
         else if (bulletOwner == BulletOwner.Enemy)
         {
             if (_collider.TryGetComponent(out Player _health))
             {
-                if (!_health.IsPlayer())
-                    _health.TakeDamage(Player.Instance.damage);
+                SpawnHitEffect();
+                _health.TakeDamage(Player.Instance.damage);
             }
         }
 
@@ -79,7 +79,11 @@ public class Bullet : MonoBehaviour
 
     void DestroyProjectile()
     {
-        PoolManager.Instance.SpawnFromPool(hitEffectTag, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
+    }
+
+    void SpawnHitEffect()
+    {
+        PoolManager.Instance.SpawnFromPool(hitEffectTag, transform.position, Quaternion.identity);
     }
 }

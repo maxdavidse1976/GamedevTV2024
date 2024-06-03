@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,18 +42,19 @@ public class GameManager : MonoBehaviour
     public void TitleScene()
     {
         gameStarted = false;
-        tower.SetActive(true);
+        Tower.Instance.RespawnTower();
         titleScreenCam.SetActive(true);
         gameScreenCam.SetActive(false);
         deathScreenCam.SetActive(false);
         player.SetActive(false);
         UIManager.Instance.ShowTitleScreen();
+        EnemyManager.Instance.ResetEnemyWaves();
     }
 
     public void StartGame()
     {
         Cursor.visible = false;
-        Tower.Instance.Heal(Tower.Instance.GetMaxHealthValue());
+        Tower.Instance.RespawnTower();
         titleScreenCam.SetActive(false);
         deathScreenCam.SetActive(false);
         player.SetActive(true);
@@ -65,11 +67,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        Tower.Instance.Heal(Tower.Instance.GetMaxHealthValue());
-        EnemyManager.Instance.ClearEnemies();
-        player.SetActive(false);
-        player.transform.position = playerStartPos;
-        StartGame();
+        SceneManager.LoadScene(0);
     }
 
     public void EndGame()

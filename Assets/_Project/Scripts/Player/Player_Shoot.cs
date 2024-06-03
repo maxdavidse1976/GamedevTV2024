@@ -36,6 +36,9 @@ public class Player_Shoot : MonoBehaviour
             targetPoint = ray.GetPoint(100); // 100 units away from the camera
         }
 
+        // Keep the y level fixed by using the y level of the firepoint
+        targetPoint.y = firepoint.position.y;
+
         Vector3 direction = (targetPoint - firepoint.position).normalized;
 
         projectile.transform.rotation = Quaternion.LookRotation(direction);
